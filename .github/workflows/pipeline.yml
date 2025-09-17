@@ -35,7 +35,7 @@ jobs:
         run: |
           curl --request POST \
             --url "https://api.github.com/repos/${{ github.repository }}/pulls" \
-            --header "Authorization: token ${{ secrets.API_TOKEN }}" \
+            --header "Authorization: token ${{ secrets.GITHUB_TOKEN}}" \
             --header "Content-Type: application/json" \
             --data "{
               \"title\": \"Auto merge dev to main\",
