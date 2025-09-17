@@ -3,7 +3,7 @@ name: Dev Pipeline
 on:
   push:
     branches:
-      - dev        # runs only on dev branch
+      - dev        # only run on dev branch
   pull_request:
     branches:
       - dev        # also runs on PRs from dev
