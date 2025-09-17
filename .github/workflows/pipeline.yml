@@ -25,11 +25,12 @@ jobs:
 
   create-pull-request:
     runs-on: ubuntu-latest
-    needs: unit-test-job
+    needs: unit-test-job   # only run if unit tests pass
+    if: github.ref == 'refs/heads/dev'  
     steps:
       - name: Create pull request
         run: |
-          curl -X POST \
+          curl --request POST \
             -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
             -H "Accept: application/vnd.github.v3+json" \
             https://api.github.com/repos/${{ github.repository }}/pulls \
