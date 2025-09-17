@@ -1,4 +1,4 @@
-name: Another Pipeline
+name: one Pipeline
  
 on:
   push:
